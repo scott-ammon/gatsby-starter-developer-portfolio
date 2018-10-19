@@ -58,6 +58,10 @@ class Navbar extends Component {
   }
 
   render() {
+
+    // Take first letters from name for 'logo' in navbar
+    const name = this.props.name.match(/\b(\w)/g).join('');
+
     return (
       <div>
         <MediaQuery query="(max-width: 550px)">
@@ -65,7 +69,7 @@ class Navbar extends Component {
         </MediaQuery>
         <div className={classNames(this.state.nav, styles.nav)}>
           <div>
-            <Link exact to='/' onClick={this.handleHomeClick} className={styles.nameLink}>GH</Link>
+            <Link exact to='/' onClick={this.handleHomeClick} className={styles.nameLink}>{name}</Link>
           </div>
           <div>
             <Link exact to="/" onClick={this.handleHomeClick} className={styles.navLink} activeClassName={styles.activeStyle}>home</Link>

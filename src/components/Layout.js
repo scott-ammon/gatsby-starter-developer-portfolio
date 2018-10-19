@@ -12,7 +12,8 @@ const Layout = ({ children, location }) => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title
+            title,
+            name
           }
         }
       }
@@ -28,12 +29,12 @@ const Layout = ({ children, location }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navbar location={location} />
+        <Navbar location={location} name={data.site.siteMetadata.name}/>
         <GlobalStyle />
         <div>
           {children}
         </div>
-        <Footer />
+        <Footer name={data.site.siteMetadata.name}/>
       </>
     )}
   />

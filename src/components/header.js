@@ -1,16 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 
-const Header = () => (
-  <Background>
-    <HeaderFlex>
-      <h1>Grace Hopper</h1>
-      <h2>
-        Hi there. I'm a software developer. I build full stack 
-        web applications with Node.js and React.
-      </h2>
-    </HeaderFlex>
-  </Background>
+const Header = (props) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            name
+          }
+        }
+      }
+    `
+    }
+    render={data => (
+      <Background>
+        <HeaderFlex>
+          <h1>{data.site.siteMetadata.name}</h1>
+          <h2>
+            Hi there. I'm a software developer. I build full stack 
+            web applications with Node.js and React.
+          </h2>
+        </HeaderFlex>
+      </Background>
+    )}
+  />
 )
 
 export default Header
