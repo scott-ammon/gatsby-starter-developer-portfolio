@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styles from '../styles/navbar.module.css'
 import classNames from 'classnames'
-import MediaQuery from 'react-responsive';
+import MediaQuery from 'react-responsive'
 import MobileMenu from '../components/MobileMenu'
 
 class Navbar extends Component {

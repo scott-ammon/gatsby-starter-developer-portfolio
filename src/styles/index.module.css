@@ -1,0 +1,48 @@
+.container {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+i {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(45deg);
+}
+
+@keyframes bounce {
+  from { transform: translate(0, -50px);     }
+  to   { transform: translate(0, -60px); }
+}
+
+.clickMe {
+  width: 25%;
+  text-align: center;
+  margin: 0 auto;
+  transform: translate(0, -50px);
+  animation: bounce 0.7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.projectsGrid {
+  display: grid;
+  padding-top: 5rem;
+  grid-gap: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-auto-rows: 350px;
+  grid-auto-flow: dense;
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0 auto;
+    width: 90vw;
+  }
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(90vw, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+  }
+}
