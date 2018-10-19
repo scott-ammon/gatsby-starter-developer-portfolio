@@ -17,23 +17,22 @@ const ScrollLink = Scroll.Link;
 class IndexPage extends Component {
   
   render() {
-    const projArray = [image1, image2, image3, image4, image5, image6]
+    const projArray = [image1, image2, image3, image4, image5, image6];
     const projects = projArray.map((project, i) => {
       return <Project key={i} projNumber={i+1} projImage={project} history={this.props.history}/>
-    })
+    });
 
     return (
       <Layout location={this.props.location}>
         <Header />
-        
-          <ScrollLink to='scrollHere' smooth={true} offset={-10}>
-            <div className={styles.clickMe}>
-              <i />
-            </div>
-          </ScrollLink>
+        <ScrollLink to='scrollHere' smooth={true} offset={-10}>
+          <div className={styles.clickMe}>
+            <i />
+          </div>
+        </ScrollLink>
         
         <div className={styles.container}>
-          <Element name="scrollHere"></Element>
+          <Element name="scrollHere" />
           <div className={styles.projectsGrid}>
             {projects}
           </div>

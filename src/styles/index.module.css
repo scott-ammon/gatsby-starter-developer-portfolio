@@ -17,7 +17,8 @@ i {
 }
 
 .clickMe {
-  width: 25%;
+  width: 50px;
+  height: 50px;
   text-align: center;
   margin: 0 auto;
   transform: translate(0, -50px);
