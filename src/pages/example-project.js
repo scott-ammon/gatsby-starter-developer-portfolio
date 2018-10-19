@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import styles from '../styles/example-project.module.css'
 
 const ExampleProject = (props) => (
   <Layout location={props.location}>
