@@ -29,12 +29,12 @@ const Layout = ({ children, location }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navbar location={location} name={data.site.siteMetadata.name}/>
-        <GlobalStyle />
-        <div>
-          {children}
-        </div>
-        <Footer name={data.site.siteMetadata.name}/>
+          <Navbar location={location} name={data.site.siteMetadata.name}/>
+          <GlobalStyle />
+          <div>
+            {children}
+          </div>
+          <Footer name={data.site.siteMetadata.name}/>
       </>
     )}
   />
@@ -79,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
   .container {
     margin: 0 auto;
     padding-top: 6rem;
-    width: 70vw;
+    width: 80vw;
   }
   @media (max-width: 550px) {
     .container {

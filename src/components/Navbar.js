@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styles from '../styles/navbar.module.css'
+import styled from 'styled-components'
 import classNames from 'classnames'
 import MediaQuery from 'react-responsive'
 import MobileMenu from '../components/MobileMenu'
@@ -67,19 +68,25 @@ class Navbar extends Component {
         <MediaQuery query="(max-width: 550px)">
           <MobileMenu homeClick={this.handleHomeClick} burgerClick={this.handleClick}></MobileMenu>
         </MediaQuery>
-        <div className={classNames(this.state.nav, styles.nav)}>
-          <div>
-            <Link exact to='/' onClick={this.handleHomeClick} className={styles.nameLink}>{name}</Link>
+        {/* <Nav> */}
+          <div className={classNames(this.state.nav, styles.nav)}>
+            <div>
+              <Link exact to='/' onClick={this.handleHomeClick} className={styles.nameLink}>{name}</Link>
+            </div>
+            <div>
+              <Link exact to="/" onClick={this.handleHomeClick} className={styles.navLink} activeClassName={styles.activeStyle}>home</Link>
+              <Link to="/about" onClick={this.handleClick} className={styles.navLink} activeClassName={styles.activeStyle}>about</Link>
+              <Link to="/contact" onClick={this.handleClick} className={styles.navLink} activeClassName={styles.activeStyle}>contact</Link>
+            </div>
           </div>
-          <div>
-            <Link exact to="/" onClick={this.handleHomeClick} className={styles.navLink} activeClassName={styles.activeStyle}>home</Link>
-            <Link to="/about" onClick={this.handleClick} className={styles.navLink} activeClassName={styles.activeStyle}>about</Link>
-            <Link to="/contact" onClick={this.handleClick} className={styles.navLink} activeClassName={styles.activeStyle}>contact</Link>
-          </div>
-        </div>
+        {/* </Nav> */}
       </div>
     )
   }
 }
 
 export default Navbar
+
+const Nav = styled.div`
+
+`;

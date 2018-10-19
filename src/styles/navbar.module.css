@@ -18,10 +18,7 @@
   font-size: 1rem;
 }
 
-.navLink:hover {
-  border-bottom: 1px solid #fff;
-}
-
+.navLink:hover,
 .activeStyle {
   border-bottom: 1px solid #fff;
 }
@@ -48,14 +45,6 @@
   background: #0F2027;
   transition: 1s ease;
   box-shadow: 0 0.125rem 1.25rem rgba(0,0,0,.8);
-}
-
-a {
-  background-image: none;
-}
-
-.activeTest {
-  border: 3px solid red;
 }
 
 @media (max-width: 550px) {
