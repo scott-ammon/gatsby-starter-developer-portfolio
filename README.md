@@ -7,7 +7,7 @@ Live demo:
 * react-scroll
 * react-responsive
 * react-burger-menu
-* CSS modules
+* styled-components
  
 ![template-responsive-site-image](/readme-assets/responsive.png?raw=true)
 
