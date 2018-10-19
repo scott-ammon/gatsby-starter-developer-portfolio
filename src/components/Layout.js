@@ -76,4 +76,15 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
   }
+  .container {
+    margin: 0 auto;
+    padding-top: 6rem;
+    width: 70vw;
+  }
+  @media (max-width: 550px) {
+    .container {
+      margin: 0 auto;
+      width: 90vw;
+    }
+  }
 `;

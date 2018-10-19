@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout'
-import styles from "../styles/contact.module.css"
+import styled from 'styled-components'
 
 class ContactPage extends Component {
   constructor(props) {
@@ -19,14 +19,14 @@ class ContactPage extends Component {
   // Make sure to set form action
   // I use formspree so no backend is needed,
   // for example: action="https://formspree.io/youremail@gmail.com"
+
   render() {
     return  (
       <Layout location={this.props.location}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>Let's Work Together</h1>
-          <p className={styles.tagline}>Don't hesitate to reach out.</p>
-          <form className={styles.contactFlex} 
-                method="POST"
+        <div className="container">
+          <h1>Let's Work Together</h1>
+          <p>Don't hesitate to reach out.</p>
+          <Form method="POST"
                 action=""
                 name="info-form"
           >
@@ -34,21 +34,18 @@ class ContactPage extends Component {
             <input
               name="name"
               type="text"
-              className={styles.contactInput}
               required
             />
             <label>*Email</label>
             <input
               name="email"
               type="text"
-              className={styles.contactInput}
               required
             />
             <label>Phone</label>
             <input
               name="phone"
               type="text"
-              className={styles.contactInput}
             />
             <label>Inquiring About:</label>
             <select>
@@ -63,11 +60,10 @@ class ContactPage extends Component {
               name="comments"
               type="text"
               rows="5"
-              className={styles.contactInput}
             />
             <p>*Indicates required field</p>
             <button>Submit</button>
-          </form>
+          </Form>
         </div>
       </Layout>
     )
@@ -75,3 +71,62 @@ class ContactPage extends Component {
 }
 
 export default ContactPage
+
+const Form = styled.form`
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  input,
+  textarea {
+    display: inline-block;
+    margin: 0 0 1rem 0;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: #FAFAFA;
+    outline: none;
+  }
+  input {
+    width: 300px;
+    height: 40px;
+  }
+  textarea {
+    width: 600px;
+    height: 200px;
+  }
+  input:focus,
+  textarea:focus {
+    background: #fff;
+  }
+  button {
+    background: #2C5364;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: .75rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  button:hover {
+    opacity: 0.7;
+  }
+  select {
+    margin-bottom: 1rem;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #FAFAFA;
+    font-family: 'Open Sans';
+    outline: none;
+  }
+  option {
+    font-family: 'Open Sans';
+  }
+  @media (max-width: 550px) {
+    input,
+    textarea,
+    select {
+      width: 100%;
+    }
+  }
+`;
