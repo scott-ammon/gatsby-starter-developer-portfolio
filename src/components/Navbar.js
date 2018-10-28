@@ -87,7 +87,6 @@ class Navbar extends Component {
 export default Navbar
 
 const Header = styled.div`
-  
   .nav {
     display: flex;
     justify-content: space-between;
@@ -110,9 +109,6 @@ const Header = styled.div`
     box-shadow: 0 0.125rem 1.25rem rgba(0,0,0,.8);
   }
   @media (max-width: 550px) {
-    .navLink {
-      display: none;
-    }
     .headerOne {
       height: 60px;
     }
@@ -145,5 +141,10 @@ const NavLinks = styled.div`
   a:hover,
   .activeStyle {
     border-bottom: 1px solid #fff;
+  }
+  @media (max-width: 550px) {
+    a {
+      display: none;
+    }
   }
 `;
