@@ -10,10 +10,10 @@ const Project = (props) => (
   <ProjectCard>
     <img src={props.projImage} alt={'software project'}></img>
     <Link to='/example-project'>
-      <div>
+      <ProjText>
         <h1>Project {props.projNumber}</h1>
         <p>This project is about some stuff. It uses React and Redux.</p>
-      </div>
+      </ProjText>
     </Link>
   </ProjectCard>
 )
@@ -42,11 +42,12 @@ const ProjectCard = styled.div`
   a:hover {
     opacity: 1;
   }
-  div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+`;
+
+const ProjText = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 `;
