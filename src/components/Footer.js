@@ -30,7 +30,7 @@ const Background = styled.div`
   padding: 1rem 0 .5rem 0;
   width: 100%;
   text-align: center;
-  background-color: #0F2027;
+  background-color: ${props => props.theme.mainColor};
   color: white;
   svg {
     margin: 0 1rem;

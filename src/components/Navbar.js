@@ -9,7 +9,7 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
     let pageName = this.props.location.pathname;
-    let navStyle;
+    let navStyle = '';
  
     if(pageName === '/') {
       navStyle = "headerOne"
@@ -104,7 +104,7 @@ const Header = styled.div`
   }
   .headerTwo {
     height: 60px;
-    background: #0F2027;
+    background: ${props => props.theme.mainColor};
     transition: 1s ease;
     box-shadow: 0 0.125rem 1.25rem rgba(0,0,0,.8);
   }

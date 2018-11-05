@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -29,12 +29,17 @@ const Layout = ({ children, location }) => (
         >
           <html lang="en" />
         </Helmet>
+        <ThemeProvider theme={theme}>
           <Navbar location={location} name={data.site.siteMetadata.name}/>
+        </ThemeProvider>
           <GlobalStyle />
           <div>
             {children}
           </div>
+        <ThemeProvider theme={theme}>
           <Footer name={data.site.siteMetadata.name}/>
+        </ThemeProvider>
+          
       </>
     )}
   />
@@ -45,6 +50,10 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const theme = {
+  mainColor: "#0F2027"
+};
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,400');

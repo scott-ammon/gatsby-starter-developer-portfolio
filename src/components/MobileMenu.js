@@ -1,6 +1,8 @@
-import { slide as Menu } from 'react-burger-menu'
-import React from 'react'
-import { Link } from 'gatsby'
+import { slide as Menu } from 'react-burger-menu';
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { ThemeConsumer } from 'styled-components';
 
 class MobileMenu extends React.Component {
   constructor (props) {
@@ -36,7 +38,7 @@ class MobileMenu extends React.Component {
         height: '100vh',
         padding: '2.5em 1.5em 0',
         fontSize: '1.15em',
-        backgroundColor: '#0F2027'
+        backgroundColor: '#222'
       },
       bmMorphShape: {
         fill: '#373a47'
